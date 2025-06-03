@@ -15,7 +15,7 @@ git clone https://github.com/hayashihikaru/speedpunk-ai-illustrator.git
 cp -r speedpunk-ai-illustrator \
    "$HOME/Library/Application Support/Adobe/CEP/extensions/"
 defaults write com.adobe.CSXS.11 PlayerDebugMode 1   # mac
-
+```
 ---
 
 ## 0 | Prerequisite file – `CSInterface.js`
@@ -36,12 +36,8 @@ SpeedpunkIllustrator2024/
 ├─ panel.js
 ├─ index.html
 ├─ style.css
-├─ jsx/host.jsx
-└─ icons/…
+└─  jsx/host.jsx
 
-markdown
-コピーする
-編集する
 
 ---
 
@@ -99,10 +95,6 @@ Based on “Speedpunk” original algorithm (© 2012 J. Yanone)
 
 Code licensed under the Apache License 2.0.
 See LICENSE and NOTICE for details.
-
-yaml
-コピーする
-編集する
 
 ---
 How to integrate
