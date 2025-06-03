@@ -1,0 +1,76 @@
+/* Speedpunk-AI Panel  •  vertical / magenta skin  (2025-06-03) */
+:root{
+    --bg:       #28282b;
+    --bg2:      #35353a;
+    --border:   #4a4a50;
+    --text:     #e2e2e6;
+    --accent:   #e6007a;             /* magenta */
+    --thumb:    #ff2fbe;
+    --radius:   5px;
+    --focus:    0 0 0 1px var(--accent);
+    font-size: 13px;
+    font-family: "Segoe UI", -apple-system, Arial, sans-serif;
+  }
+  
+  html,body{height:100%;margin:0;background:var(--bg);color:var(--text);}
+  body{display:flex;flex-direction:column;padding:10px;gap:10px;box-sizing:border-box}
+  
+  fieldset{
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    background:var(--bg2);
+    padding:10px 8px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  
+  legend{
+    padding:0 5px;
+    color:var(--accent);
+    font-weight:600;
+  }
+  
+  label{display:flex;justify-content:space-between;align-items:center;gap:6px}
+  label span.value{min-width:40px;text-align:right;color:#b8b8bc}
+  
+  input[type=range]{
+    flex:1;height:4px;background:#202023;border-radius:2px;
+    -webkit-appearance:none;margin:0;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;width:14px;height:14px;border-radius:50%;
+    background:var(--thumb);border:none;box-shadow:var(--focus);cursor:pointer;
+  }
+  
+  input[type=number],select{
+    width:75px;background:var(--bg);border:1px solid var(--border);
+    color:var(--text);border-radius:var(--radius);padding:3px 5px;
+  }
+  input[type=number]:focus,select:focus{outline:var(--focus)}
+  
+  button{
+    padding:6px 16px;border:none;border-radius:var(--radius);
+    background:var(--accent);color:#fff;font-weight:600;cursor:pointer;
+  }
+  button:active{transform:translateY(1px)}
+  button:focus{outline:var(--focus)}
+  
+  #msg{min-height:18px;font-size:11px;color:var(--thumb)}
+  
+  footer         { margin-top:auto;font-size:11px;text-align:right;color:#888 }
+  
+  #credit        { font-size:10px;color:#666;user-select:none }
+
+  #logBox{
+    height:70px;              /* ログ表示は常に 70px */
+    background:#202026;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:4px 6px;
+    overflow-y:auto;          /* 行が増えたら中だけスクロール */
+    font-size:11px;
+    color:var(--accent);      /* マゼンタ系で統一 */
+  }
+  #msg{ white-space:pre-wrap; }  /* 改行もそのまま表示 */
+  

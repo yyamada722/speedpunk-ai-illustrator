@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><title>Speedpunk AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<form id="controls">
+
+<fieldset>
+  <legend>Density / Length</legend>
+  <label>Step
+    <input type="range" id="step" min="0.01" max="0.3" step="0.01" value="0.05">
+    <span class="value" id="stepVal">0.05</span>
+  </label>
+  <label>Length
+    <input type="range" id="mag" min="5" max="600" step="5" value="200">
+    <span class="value" id="magVal">200</span>
+  </label>
+  <label>Opacity
+    <input type="range" id="opacity" min="10" max="100" step="5" value="70">
+    <span class="value" id="opVal">70</span>
+  </label>
+</fieldset>
+
+<fieldset>
+  <legend>Appearance</legend>
+  <label>Gamma
+    <input type="range" id="gamma" min="0.3" max="3" step="0.1" value="1.4">
+    <span class="value" id="gammaVal">1.4</span>
+  </label>
+  <label>Stroke
+    <input type="range" id="stroke" min="0.05" max="10" step="0.05" value="1">
+    <span class="value" id="strokeVal">1</span>
+  </label>
+  <label>Tick pt
+    <input type="number" id="tickSpace" min="3" max="50" step="1" value="12">
+  </label>
+  <label>Color&nbsp;map
+    <select id="colormap">
+      <option value="rainbow">Rainbow</option>
+      <option value="viridis" selected>Viridis</option>
+      <option value="magma">Magma</option>
+      <option value="heat">Heat</option>
+      <option value="gray">Gray-Y-R</option>
+      <option value="gyr">Green-Y-R</option>
+      <option value="purp">Black-P-Y-R</option>
+    </select>
+  </label>
+</fieldset>
+
+<fieldset>
+  <legend>Mode</legend>
+  <label>Direction
+    <select id="combDir">
+      <option value="inner">Inner</option>
+      <option value="outer">Outer</option>
+      <option value="both" selected>Both</option>
+    </select>
+  </label>
+  <label>Layer
+    <select id="layerPos">
+      <option value="top" selected>Top</option>
+      <option value="bottom">Bottom</option>
+    </select>
+  </label>
+  <label><input type="checkbox" id="lockLayer" checked> Lock layer</label>
+</fieldset>
+
+<fieldset>
+  <legend>Live</legend>
+  <label>Interval&nbsp;ms
+    <input type="number" id="interval" min="200" max="5000" step="100" value="1000">
+  </label>
+  <label><input type="checkbox" id="liveMode"> Live update</label>
+</fieldset>
+
+</form>
+
+<div id="actions">
+  <button id="btnAnalyze">Analyze (Ctrl/Cmd-Shift-X)</button>
+</div>
+
+<div id="logBox">
+  <div id="msg"></div>              <!-- ★ ログは専用ボックスへ -->
+</div>
+
+<footer>
+  <div id="ver"></div>
+  <div id="credit">© 2025 Hayashihikaru  |  Based on “Speedpunk” by J. Yanone</div>
+</footer>
+
+<script src="CSInterface.js"></script>
+<script src="panel.js"></script>
+</body>
+</html>

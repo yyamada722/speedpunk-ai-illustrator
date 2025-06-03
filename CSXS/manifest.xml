@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionManifest Version="7.0" ExtensionBundleId="com.yourdomain.speedpunk.ai" ExtensionBundleVersion="1.0.0" ExtensionBundleName="Speedpunk‑AI"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ExtensionList>
+    <Extension Id="com.yourdomain.speedpunk.ai.panel" Version="1.0.0"/>
+  </ExtensionList>
+
+  <ExecutionEnvironment>
+    <HostList>
+      <!-- Illustrator 2024+ -->
+      <Host Name="ILST" Version="[28.0,99.9]"/>
+    </HostList>
+    <LocaleList>
+      <Locale Code="All"/>
+    </LocaleList>
+    <RequiredRuntimeList>
+      <!-- CEP 12 == CSXS 12 for Ai 2024 -->
+      <RequiredRuntime Name="CSXS" Version="11.0"/>
+    </RequiredRuntimeList>
+  </ExecutionEnvironment>
+
+  <DispatchInfoList>
+    <Extension Id="com.yourdomain.speedpunk.ai.panel">
+      <DispatchInfo>
+        <Resources>
+          <MainPath>./index.html</MainPath>
+          <ScriptPath>./jsx/host.jsx</ScriptPath>
+        </Resources>
+        <Lifecycle>
+          <AutoVisible>true</AutoVisible>
+        </Lifecycle>
+        <UI>
+          <Type>Panel</Type>
+          <Menu>Speedpunk AI</Menu>
+          <Geometry>
+            <Size>
+              <Height>600</Height>
+              <Width>360</Width>
+            </Size>
+            <MinSize>
+              <Height>400</Height>
+              <Width>320</Width>
+            </MinSize>
+            <MaxSize>
+              <Height>1200</Height>
+              <Width>800</Width>
+            </MaxSize>
+          </Geometry>
+          <Icons>
+            <Icon Type="Normal">./icons/icon-normal.png</Icon>
+            <Icon Type="RollOver">./icons/icon-rollover.png</Icon>
+            <Icon Type="DarkNormal">./icons/icon-dark-normal.png</Icon>
+            <Icon Type="DarkRollOver">./icons/icon-dark-rollover.png</Icon>
+          </Icons>
+        </UI>
+      </DispatchInfo>
+    </Extension>
+  </DispatchInfoList>
+</ExtensionManifest>
