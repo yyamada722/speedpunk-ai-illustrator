@@ -2,6 +2,8 @@
 Interactive curvature-comb visualiser rebuilt from
 [yanone/speedpunk](https://github.com/yanone/speedpunk).
 
+<img src="./imgs/header.png" alt="" title="">
+
 ### Features
 * Live curvature combs with gamma & stroke scaling  
 * Straight-segment ticks auto-fill the segment  
