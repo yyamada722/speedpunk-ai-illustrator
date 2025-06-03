@@ -4,6 +4,8 @@ Interactive curvature-comb visualiser rebuilt from
 
 <img src="./imgs/header.png" alt="" title="">
 
+<img src="./imgs/ss_001.png" alt="" title="">
+
 ### Features
 * Live curvature combs with gamma & stroke scaling  
 * Straight-segment ticks auto-fill the segment  
