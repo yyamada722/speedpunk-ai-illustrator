@@ -42,7 +42,7 @@ This panel is a CEP (Common Extensibility Platform) extension and needs
 **`CSInterface.js`** to talk to Illustrator.
 
 1. Download the official file from the Adobe-CEP GitHub repo:  
-   <https://github.com/Adobe-CEP/CEP-Resources/tree/master/CEP_11.x/CSXS>  
+   <https://github.com/Adobe-CEP/CEP-Resources/tree/master/CEP_11.x/>  
    → **Right-click “CSInterface.js” ▶ Save As…**
 2. Copy the file into your extension folder **`SpeedpunkIllustrator2024/`**  
    (same level as `index.html`, `panel.js`, `style.css`).
