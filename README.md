@@ -10,46 +10,9 @@ Interactive curvature-comb visualiser rebuilt from
 * Heat-map colour presets (viridis / magma / gray-→-red …)  
 * Heavy >1 s auto-stop safety
 
-### Install (dev build)
-
-```bash
-git clone https://github.com/hayashihikaru/speedpunk-ai-illustrator.git
-cp -r speedpunk-ai-illustrator \
-   "$HOME/Library/Application Support/Adobe/CEP/extensions/"
-defaults write com.adobe.CSXS.11 PlayerDebugMode 1   # mac
-```
 ---
 
-## 0 | Prerequisite file – `CSInterface.js`
-This panel is a CEP (Common Extensibility Platform) extension and needs  
-**`CSInterface.js`** to talk to Illustrator.
-
-1. Download the official file from the Adobe-CEP GitHub repo:  
-   <https://github.com/Adobe-CEP/CEP-Resources/tree/master/CEP_11.x/CSXS>  
-   → **Right-click “CSInterface.js” ▶ Save As…**
-2. Copy the file into your extension folder **`SpeedpunkIllustrator2024/`**  
-   (same level as `index.html`, `panel.js`, `style.css`).
-
-Folder layout should now look like
-
-SpeedpunkIllustrator2024/
-
-├─ CSXS/manifest.xml
-
-├─ CSInterface.js ← NEW
-
-├─ panel.js
-
-├─ index.html
-
-├─ style.css
-
-└─  jsx/host.jsx
-
-
----
-
-## 1 | Quick Start (English)
+## 0 | Quick Start (English)
 
 | Step | Action |
 |------|--------|
@@ -67,6 +30,89 @@ SpeedpunkIllustrator2024/
 * **Color map** – preset palettes (Rainbow, Viridis, Gray→Red, etc.)  
 * **Direction / Layer / Lock** – where and how combs are drawn  
 * **Live** – auto-refresh every _Interval ms_ for interactive editing
+
+<img src="./imgs/ui.png" alt="" title="">
+
+---
+
+## 1 | Prerequisite file – `CSInterface.js`
+This panel is a CEP (Common Extensibility Platform) extension and needs  
+**`CSInterface.js`** to talk to Illustrator.
+
+1. Download the official file from the Adobe-CEP GitHub repo:  
+   <https://github.com/Adobe-CEP/CEP-Resources/tree/master/CEP_11.x/CSXS>  
+   → **Right-click “CSInterface.js” ▶ Save As…**
+2. Copy the file into your extension folder **`SpeedpunkIllustrator2024/`**  
+   (same level as `index.html`, `panel.js`, `style.css`).
+
+Folder layout should now look like
+
+If the panel is still not listed, confirm that
+CSInterface.js is present and that the folder name matches the ExtensionBundleId in manifest.xml.
+
+```
+└─ (User CEP folder)
+   └─ SpeedpunkIllustrator2024/
+      ├─ CSXS/manifest.xml
+      ├─ CSInterface.js   ← downloaded from Adobe-CEP repo
+      ├─ panel.js
+      ├─ index.html
+      ├─ style.css
+      └─ jsx/host.jsx
+```
+
+---
+
+## Developer-mode (unsigned) Setup
+
+> Adobe CEP will *refuse* to load an unsigned extension unless “PlayerDebugMode”  
+> is turned on **per machine**.  
+> Run **one** of the scripts below *once* and restart Illustrator.
+
+### macOS `enable_debug.command`
+
+```bash
+#!/bin/bash
+# -------------------------------
+# Enable unsigned CEP extensions
+# -------------------------------
+CSXS_VER="11"
+defaults write "com.adobe.CSXS.$CSXS_VER" PlayerDebugMode 1
+echo "✅ PlayerDebugMode set to 1 for CSXS $CSXS_VER"
+echo "Restart Illustrator to load unsigned extensions."
+```
+
+### Windows enable_debug.bat
+```bat
+@echo off
+:: Enable unsigned CEP extensions (CSXS 11)
+SET CSXS_VER=11
+REG ADD "HKCU\Software\Adobe\CSXS.%CSXS_VER%" ^
+    /v PlayerDebugMode /t REG_DWORD /d 1 /f
+echo.
+echo ✅ PlayerDebugMode set to 1 for CSXS %CSXS_VER%
+echo Restart Illustrator to load unsigned extensions.
+pause
+```
+Right-click ▶ “Run as Administrator” (not strictly required, but safer).
+
+### 🛑 Security notice  
+PlayerDebugMode = 1 disables Adobe’s signature check for all CEP panels
+on your system. 
+
+Malicious ZXP/extension code could run with full scripting rights
+inside Illustrator, Photoshop, InDesign, etc.
+
+Only install extensions you trust or built yourself.
+
+Switch it off again when you no longer need dev-mode:
+
+```bash
+# mac
+defaults delete com.adobe.CSXS.11 PlayerDebugMode
+# Windows
+REG DELETE "HKCU\Software\Adobe\CSXS.11" /v PlayerDebugMode /f
+```
 
 ---
 
