@@ -96,12 +96,4 @@ Based on “Speedpunk” original algorithm (© 2012 J. Yanone)
 Code licensed under the Apache License 2.0.
 See LICENSE and NOTICE for details.
 
----
-How to integrate
-Replace or merge this section into your current README.md.
 
-Ensure CSInterface.js is actually present in the root of the extension folder.
-
-Push to GitHub ― the repository now contains clear bilingual instructions and proper credit.
-
-Happy publishing!
