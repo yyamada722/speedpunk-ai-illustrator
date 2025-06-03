@@ -31,11 +31,17 @@ This panel is a CEP (Common Extensibility Platform) extension and needs
 Folder layout should now look like
 
 SpeedpunkIllustrator2024/
+
 ├─ CSXS/manifest.xml
+
 ├─ CSInterface.js ← NEW
+
 ├─ panel.js
+
 ├─ index.html
+
 ├─ style.css
+
 └─  jsx/host.jsx
 
 
